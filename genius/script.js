@@ -9,7 +9,6 @@ const red = document.querySelector('.red')
 const green = document.querySelector('.green')
 const yellow = document.querySelector('.yellow')
 
-//cria ordem aletoria de cores
 let shuffleOrder = () => {
     let colorOrder = Math.floor(Math.random() * 4)
     order[order.length] = colorOrder
@@ -39,11 +38,10 @@ let checkOrder = () => {
             gameOver()
             break
         }
-
-        if(clickedOrder.length == order.length) {
-            alert(`Pontuação: ${score}\nVocê acertou! Iniciando próximo nível`)
-            nextLevel()
-        }
+    }
+    if(clickedOrder.length == order.length) {
+        alert(`Pontuação: ${score}\nVocê acertou! Iniciando próximo nível`)
+        nextLevel()
     }
 }
 
@@ -75,7 +73,7 @@ let nextLevel = () => {
 }
 
 let gameOver = () => {
-    alert(`Pontuação: ${score}\nVocê perdeu!\nClick em OK para iniciar um novo jogo.`)
+    alert(`Pontuação: ${score}!\nVocê perdeu o jogo!\nClique em OK para iniciar um novo jogo`)
     order = []
     clickedOrder = []
 
@@ -83,7 +81,7 @@ let gameOver = () => {
 }
 
 let playGame = () => {
-    alert(`Bem vindo ao Genius!`)
+    alert('Bem vindo ao Gênesis! Iniciando novo jogo!')
     score = 0
 
     nextLevel()
